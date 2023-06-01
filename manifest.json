@@ -12,6 +12,8 @@
 		}
 	],
 	"permissions": [
+        "*://twitter.com/*",
+        "activeTab",
         "webRequest"
     ]
 }
