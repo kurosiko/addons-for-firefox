@@ -37,3 +37,10 @@ window.fetch = function(url, options) {
 
 
 //fetchはXHRが更新されるタイミングで呼び出されるっぽ？↑
+console.log("loaded")
+browser.webRequest.onBeforeSendHeaders.addListener(
+    (details) => {
+        console.log(details);
+    }, {
+        urls: ["https://twitter.com/*"],
+    }, []);
