@@ -2,14 +2,14 @@
 	"manifest_version": 2,
 	"name": "instant share for twitter",
 	"version": "1.0",
-	"content_scripts": [
-		{
-			"matches": [
-				"http://twitter.com/home",
-				"https://twitter.com/home"
-			],
-			"js": ["main.js"]
-		}
-	],
-	"permissions": []
+    "background": {
+        "scripts": [
+            "main.js"
+        ]
+    },
+	"permissions": [
+        "<all_urls>",
+        "activeTab",
+        "webRequest"
+    ]
 }

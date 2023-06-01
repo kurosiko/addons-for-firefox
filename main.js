@@ -1,3 +1,4 @@
+/*
 function show() {
     console.log("GET");
     //動作確認用
@@ -18,22 +19,26 @@ function show() {
         element.appendChild(share);
     }
 }
-// 元のfetch関数を保存
-var originalFetch = window.fetch;
-
-// fetch関数を上書き
-window.fetch = function(url, options) {
-    console.log(url)
-    // リクエストが送信される前に行いたい処理を追加
-    // fetchの結果を取得するための処理を設定
-    return originalFetch.apply(this, arguments).then(function(response) {
-        // レスポンスを取得するための処理を追加
-        return response.text().then(function(text) {
-            console.log('Response:', text);
-            return response;
-        });
-    });
-};
-
-
-//fetchはXHRが更新されるタイミングで呼び出されるっぽ？↑
+*/
+console.log("loaded")
+browser.webRequest.onBeforeSendHeaders.addListener((detail)=>{
+    for (const req_data of detail.requestHeaders){
+        if (req_data.name == "authorization"){
+            console.log(req_data.value)
+        }
+    }
+},
+{
+    urls:["https://api.twitter.com/1.1/live_pipeline/update_subscriptions"]
+},
+["requestHeaders"]
+)
+/*
+console.log("loaded")
+browser.webRequest.onBeforeRequest.addListener(
+    (details) => {
+        console.log(details);
+    }, {
+        urls: ["https://api.twitter.com/1.1/live_pipeline/update_subscriptions"],
+    },[]);
+    */
