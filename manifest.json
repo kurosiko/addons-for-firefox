@@ -11,5 +11,7 @@
 			"js": ["main.js"]
 		}
 	],
-	"permissions": []
+	"permissions": [
+        "webRequest"
+    ]
 }
