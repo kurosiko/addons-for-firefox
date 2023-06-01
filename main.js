@@ -1,5 +1,6 @@
 function show() {
     console.log("GET");
+    //動作確認用
     const tweet = document.getElementsByTagName("article");
     console.log(tweet);
 
@@ -16,7 +17,7 @@ function show() {
         share.className = "isft"
         element.appendChild(share);
     }
-  }
+}
 // 元のfetch関数を保存
 var originalFetch = window.fetch;
 
@@ -34,4 +35,5 @@ window.fetch = function(url, options) {
     });
 };
 
-// ブラウザでの通信が行われる度に上記の処理が実行されます
+
+//fetchはXHRが更新されるタイミングで呼び出されるっぽ？↑
