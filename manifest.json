@@ -1,0 +1,15 @@
+{
+	"manifest_version": 2,
+	"name": "instant share for twitter",
+	"version": "1.0",
+	"content_scripts": [
+		{
+			"matches": [
+				"http://twitter.com/*/following",
+				"https://twitter.com/*/following"
+			],
+			"js": ["main.js"]
+		}
+	],
+	"permissions": []
+}
