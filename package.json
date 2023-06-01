@@ -1,6 +1,6 @@
 {
     "scripts": {
-        "start": "web-ext run --source-dir ./"
+        "start": "web-ext run --source-dir ./ --keep-profile-changes"
     },
     "dependencies": {
         "web-ext": "^7.6.2"
