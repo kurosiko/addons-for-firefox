@@ -1,0 +1,8 @@
+{
+    "scripts": {
+        "start": "web-ext run --source-dir ./"
+    },
+    "dependencies": {
+        "web-ext": "^7.6.2"
+    }
+}
