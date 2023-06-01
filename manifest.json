@@ -5,8 +5,8 @@
 	"content_scripts": [
 		{
 			"matches": [
-				"http://twitter.com/*/following",
-				"https://twitter.com/*/following"
+				"http://twitter.com/home",
+				"https://twitter.com/home"
 			],
 			"js": ["main.js"]
 		}
